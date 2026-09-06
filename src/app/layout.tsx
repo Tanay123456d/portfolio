@@ -96,7 +96,7 @@ export default function RootLayout({
       name: "National Institute of Fashion Technology",
     },
     sameAs: [
-      "https://instagram.com/ujjawaltamrakar",
+      "https://www.instagram.com/ujjwal__tamrakar/",
       "https://linkedin.com/in/ujjawaltamrakar",
       "https://behance.net/ujjawaltamrakar",
       "https://dribbble.com/ujjawaltamrakar",

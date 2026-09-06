@@ -23,7 +23,7 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { label: "Instagram", url: "https://instagram.com/ujjawaltamrakar" },
+  { label: "Instagram", url: "https://www.instagram.com/ujjwal__tamrakar/" },
   { label: "LinkedIn", url: "https://linkedin.com/in/ujjawaltamrakar" },
   { label: "Behance", url: "https://behance.net/ujjawaltamrakar" },
   { label: "Dribbble", url: "https://dribbble.com/ujjawaltamrakar" },
