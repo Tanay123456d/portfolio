@@ -1,9 +1,13 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { useCursorContext } from "@/components/ui/Cursor";
 import { SITE_CONFIG } from "@/data/constants";
+import Link from "next/link";
+
+const ROLES = ["BRAND IDENTITY", "PACKAGING", "EDITORIAL", "ILLUSTRATION", "DIGITAL"];
 
 export default function Hero() {
   const ref = useRef(null);
@@ -12,8 +16,17 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
   const { setCursorVariant } = useCursorContext();
+
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setRoleIndex((i) => (i + 1) % ROLES.length);
+    }, 2400);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <motion.section
@@ -28,7 +41,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          GRAPHIC DESIGNER / ART DIRECTOR
+          VISUAL COMMUNICATION DESIGNER — INDIA
         </motion.p>
 
         <motion.h1
@@ -37,38 +50,100 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
-          I DESIGN
-          <br />
-          <span className="text-foreground/90">VISUAL SYSTEMS</span>
-          <br />
-          <span className="italic font-normal text-muted-foreground">that matter.</span>
+          <motion.span
+            className="block overflow-hidden"
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.span
+              className="block"
+              initial={{ y: "110%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            >
+              UJJWAL
+            </motion.span>
+          </motion.span>
+          <span className="text-foreground/90">
+            <motion.span
+              className="block overflow-hidden"
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.span
+                className="block"
+                initial={{ y: "110%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+              >
+                TAMRAKAR
+              </motion.span>
+            </motion.span>
+          </span>
+          <span className="text-muted-foreground">
+            <motion.span
+              className="block overflow-hidden"
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.span
+                className="block"
+                initial={{ y: "110%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              >
+                DESIGNS<span className="text-accent">.</span>
+              </motion.span>
+            </motion.span>
+          </span>
         </motion.h1>
 
         <motion.div
-          className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-12 md:mt-20"
+          className="mt-8 h-10 flex items-center overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.1 }}
+        >
+          <span className="text-meta uppercase tracking-widest text-muted-foreground mr-3">
+            Focusing on
+          </span>
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={roleIndex}
+              className="font-display font-semibold text-accent uppercase tracking-wider"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {ROLES[roleIndex]}
+            </motion.span>
+          </AnimatePresence>
+        </motion.div>
+
+        <motion.div
+          className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-12 md:mt-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="max-w-md">
             <p className="text-body-lg text-muted-foreground leading-relaxed">
-              Visual communication designer focused on branding, packaging, editorial design, illustration, and digital experiences.
+              I turn ideas into visual systems people can recognize, remember, and
+              feel — across branding, packaging, editorial, and digital.
             </p>
           </div>
 
           <div className="flex flex-col gap-3">
-            <a
-              href="#work"
-              onClick={(e) => {
-                e.preventDefault();
-                document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="text-body-sm font-display uppercase tracking-wider hover-arrow text-foreground/80 hover:text-accent transition-colors w-fit"
+            <Link
+              href="/work"
+              className="group inline-flex items-center gap-3 px-6 py-3 bg-foreground text-background font-display text-meta uppercase tracking-wider hover:bg-accent hover:text-background transition-colors duration-300 w-fit"
               onMouseEnter={() => setCursorVariant("link")}
               onMouseLeave={() => setCursorVariant("default")}
             >
-              View Selected Work <span className="arrow">↓</span>
-            </a>
+              View All Work
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
             <a
               href="#about"
               onClick={(e) => {
@@ -79,7 +154,7 @@ export default function Hero() {
               onMouseEnter={() => setCursorVariant("link")}
               onMouseLeave={() => setCursorVariant("default")}
             >
-              About Me <span className="arrow">→</span>
+              More About Me <span className="arrow">↓</span>
             </a>
           </div>
         </motion.div>
@@ -89,7 +164,7 @@ export default function Hero() {
         className="section-padding py-8 flex flex-col md:flex-row items-start md:items-end justify-between gap-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.2 }}
+        transition={{ duration: 0.8, delay: 1.6 }}
       >
         <p className="text-meta uppercase tracking-widest flex items-center gap-3 text-muted-foreground">
           <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
@@ -97,7 +172,7 @@ export default function Hero() {
         </p>
         <div className="hidden md:flex text-meta uppercase tracking-widest text-muted-foreground gap-12">
           <span>Based in {SITE_CONFIG.location}</span>
-          <span>{SITE_CONFIG.education}</span>
+          <span>8 Projects</span>
           <span>{SITE_CONFIG.year}</span>
         </div>
       </motion.div>

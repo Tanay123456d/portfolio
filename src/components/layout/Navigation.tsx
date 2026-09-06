@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { useActiveSection } from "@/hooks/useActiveSection";
@@ -14,6 +15,8 @@ export default function Navigation() {
   const { scrollDirection, scrollY } = useScrollDirection();
   const activeSection = useActiveSection(["work", "about", "capabilities", "contact"]);
   const { setCursorVariant } = useCursorContext();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     if (mobileOpen) {
@@ -28,10 +31,18 @@ export default function Navigation() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("#")) {
+      if (!isHome) {
+        window.location.href = "/" + href;
+        return;
+      }
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+      return;
     }
+    window.location.href = href;
   };
 
   return (
@@ -59,32 +70,38 @@ export default function Navigation() {
           </Link>
 
           <div className="hidden md:flex items-center gap-10">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(link.href);
-                }}
-                className={`text-body-sm font-display uppercase tracking-wider transition-colors duration-300 relative ${
-                  activeSection === link.href.replace("#", "")
-                    ? "text-accent"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-                onMouseEnter={() => setCursorVariant("link")}
-                onMouseLeave={() => setCursorVariant("default")}
-              >
-                {link.label}
-                {activeSection === link.href.replace("#", "") && (
-                  <motion.span
-                    layoutId="nav-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                )}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const anchor = link.href.replace("/", "").replace("#", "");
+              const isActive = link.href.startsWith("#")
+                ? activeSection === anchor
+                : pathname === link.href;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href);
+                  }}
+                  className={`text-body-sm font-display uppercase tracking-wider transition-colors duration-300 relative ${
+                    isActive
+                      ? "text-accent"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  onMouseEnter={() => setCursorVariant("link")}
+                  onMouseLeave={() => setCursorVariant("default")}
+                >
+                  {link.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-indicator"
+                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                </a>
+              );
+            })}
           </div>
 
           <div className="flex items-center gap-4">

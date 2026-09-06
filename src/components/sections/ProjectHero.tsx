@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import PortfolioImage from "@/components/ui/PortfolioImage";
 
 interface ProjectHeroProps {
@@ -21,12 +22,12 @@ export default function ProjectHero({ title, category, year, role, client, image
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
-        <a
-          href="/#work"
+        <Link
+          href="/work"
           className="text-meta uppercase tracking-widest text-foreground/40 hover:text-accent transition-colors inline-flex items-center gap-2 mb-12"
         >
           ← Back to Work
-        </a>
+        </Link>
 
         <h1 className="font-display font-bold text-display-lg tracking-tighter leading-[0.95] mb-8">
           {title}

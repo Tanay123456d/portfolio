@@ -1,7 +1,7 @@
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import Work from "@/components/sections/Work";
+import FeaturedWork from "@/components/sections/FeaturedWork";
 import About from "@/components/sections/About";
 import Capabilities from "@/components/sections/Capabilities";
 import Tools from "@/components/sections/Tools";
@@ -15,7 +15,7 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <Work />
+        <FeaturedWork />
         <About />
         <Capabilities />
         <Tools />
