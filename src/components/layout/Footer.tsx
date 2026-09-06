@@ -21,7 +21,7 @@ export default function Footer() {
               {SITE_CONFIG.name}
             </Link>
             <p className="text-body-sm text-muted-foreground mb-6 max-w-xs">
-              Graphic Designer / Visual Designer crafting identity systems, campaigns, and digital experiences.
+              Visual Communication Designer crafting branding, packaging, editorial design, and digital experiences.
             </p>
             <p className="text-body-sm text-muted-foreground">
               {SITE_CONFIG.location}

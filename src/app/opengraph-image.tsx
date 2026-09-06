@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "Ujjwal Tamrakar — Graphic Designer";
+export const alt = "Ujjwal Tamrakar — Visual Communication Designer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -22,7 +22,7 @@ export default async function OpengraphImage() {
       >
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <span style={{ fontSize: 16, letterSpacing: 4, textTransform: "uppercase", color: "#555" }}>
-            Graphic Designer / Art Director
+            Visual Communication Designer / Illustrator
           </span>
           <span style={{ fontSize: 16, letterSpacing: 4, textTransform: "uppercase", color: "#555" }}>
             India · 2026
@@ -39,7 +39,7 @@ export default async function OpengraphImage() {
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <span style={{ width: 12, height: 12, borderRadius: 999, background: "#22c55e" }} />
           <span style={{ fontSize: 18, letterSpacing: 3, textTransform: "uppercase", color: "#E85D04", fontWeight: 600 }}>
-            Available for select projects
+            Available for Freelance & Fulltime
           </span>
         </div>
       </div>

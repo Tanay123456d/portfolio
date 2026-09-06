@@ -3,16 +3,16 @@ import { NavLink, SocialLink, Experience, Tool } from "@/types";
 export const SITE_CONFIG = {
   name: "Ujjwal Tamrakar",
   shortName: "UJ",
-  title: "Ujjwal Tamrakar — Graphic Designer",
+  title: "Ujjwal Tamrakar — Visual Communication Designer",
   description:
-    "Graphic designer focused on visual identity, branding, digital experiences, and art direction.",
+    "Visual communication designer focused on branding, packaging, editorial design, illustration, and digital experiences.",
   url: "https://ujjawaltamrakar.com",
   email: "hello@ujjawaltamrakar.com",
   phone: "",
   location: "India",
   education: "NIFT Bhopal",
   year: "2026",
-  availability: "Available for select projects",
+  availability: "Available for Freelance & Fulltime",
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -24,32 +24,31 @@ export const NAV_LINKS: NavLink[] = [
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { label: "Instagram", url: "https://www.instagram.com/ujjwal__tamrakar/" },
-  { label: "LinkedIn", url: "https://linkedin.com/in/ujjawaltamrakar" },
-  { label: "Behance", url: "https://behance.net/ujjawaltamrakar" },
-  { label: "Dribbble", url: "https://dribbble.com/ujjawaltamrakar" },
+  { label: "Behance", url: "https://www.behance.net/ujjawaltamrakar" },
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/ujjwal-tamrakar-158213250" },
 ];
 
 export const EXPERIENCE: Experience[] = [
   {
-    period: "2022 — 2026",
-    institution: "National Institute of Fashion Technology",
-    title: "B.Des in Graphic Design",
+    period: "2024 — Present",
+    institution: "somersault — Gurgaon, India",
+    title: "Junior Graphic Designer",
     description:
-      "Comprehensive study of visual communication, typography, branding, editorial design, and digital media. Engaged in extensive projects involving identity systems, poster design, packaging, and art direction.",
+      "Working across brand identity, packaging, and campaign graphics for client deliverables — refining the full design process from concept to final production artwork.",
   },
   {
-    period: "2025",
-    institution: "Design Studio",
-    title: "Graphic Design Intern",
+    period: "2022 — 2023",
+    institution: "The Gourmet By Renukka — India",
+    title: "Graphic Designer & Social Media Content Creator",
     description:
-      "Contributed to brand identity projects, social media campaigns, and editorial layouts. Collaborated with senior designers on client deliverables across multiple industries.",
+      "Owned brand graphics and social content across the brand's channels — turning the brand's identity into scroll-stopping visual storytelling.",
   },
   {
-    period: "2024",
-    institution: "Freelance",
-    title: "Visual Designer",
+    period: "2021 — 2022",
+    institution: "04 Clothing — Indore, India",
+    title: "Illustration Designer",
     description:
-      "Independent design work for startups and cultural organizations. Focused on brand identity, poster design, and digital content creation.",
+      "Created apparel graphics and illustrations for the clothing brand, translating trends into wearable, production-ready artwork.",
   },
 ];
 
@@ -57,11 +56,8 @@ export const TOOLS: Tool[] = [
   { name: "Adobe Photoshop", category: "Design" },
   { name: "Adobe Illustrator", category: "Design" },
   { name: "Adobe InDesign", category: "Layout" },
-  { name: "Adobe After Effects", category: "Motion" },
-  { name: "Adobe Premiere Pro", category: "Video" },
   { name: "Figma", category: "Design" },
   { name: "Canva", category: "Design" },
-  { name: "Blender", category: "3D" },
 ];
 
 export const CAPABILITIES = [

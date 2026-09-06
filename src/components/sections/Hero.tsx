@@ -52,7 +52,7 @@ export default function Hero() {
         >
           <div className="max-w-md">
             <p className="text-body-lg text-muted-foreground leading-relaxed">
-              Graphic designer focused on visual identity, branding, digital experiences, and art direction.
+              Visual communication designer focused on branding, packaging, editorial design, illustration, and digital experiences.
             </p>
           </div>
 

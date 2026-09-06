@@ -65,7 +65,7 @@ export default function ProjectPage({ params }: Props) {
     creator: {
       "@type": "Person",
       name: "Ujjwal Tamrakar",
-      jobTitle: "Graphic Designer",
+      jobTitle: "Visual Communication Designer",
     },
     about: project.category,
     url: `${SITE_CONFIG.url}/work/${project.slug}`,
@@ -87,6 +87,7 @@ export default function ProjectPage({ params }: Props) {
           role={project.role}
           client={project.client}
           image={project.heroImage}
+          behanceUrl={project.behanceUrl}
         />
 
         <div className="section-padding">

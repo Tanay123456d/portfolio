@@ -11,6 +11,7 @@ export interface Project {
   heroImage: string;
   gallery: GalleryImage[];
   services: string[];
+  behanceUrl?: string;
   overview: string;
   concept: string;
   process: ProcessStep[];

@@ -17,18 +17,18 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ujjawaltamrakar.com"),
-  title: "Ujjwal Tamrakar — Graphic Designer",
+  title: "Ujjwal Tamrakar — Visual Communication Designer",
   description:
-    "Graphic designer focused on visual identity, branding, digital experiences, and art direction. Based in India. NIFT Bhopal.",
+    "Visual communication designer focused on branding, packaging, editorial design, illustration, and digital experiences. Based in India.",
   keywords: [
     "graphic designer",
+    "visual communication designer",
     "visual identity",
     "branding",
-    "art direction",
+    "packaging",
     "editorial design",
     "Ujjwal Tamrakar",
     "portfolio",
-    "NIFT Bhopal",
   ],
   authors: [{ name: "Ujjwal Tamrakar" }],
   openGraph: {
@@ -36,16 +36,16 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "/",
     siteName: "Ujjwal Tamrakar",
-    title: "Ujjwal Tamrakar — Graphic Designer",
+    title: "Ujjwal Tamrakar — Visual Communication Designer",
     description:
-      "Graphic designer focused on visual identity, branding, digital experiences, and art direction.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ujjwal Tamrakar — Graphic Designer" }],
+      "Visual communication designer focused on branding, packaging, editorial design, illustration, and digital experiences.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ujjwal Tamrakar — Visual Communication Designer" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ujjwal Tamrakar — Graphic Designer",
+    title: "Ujjwal Tamrakar — Visual Communication Designer",
     description:
-      "Graphic designer focused on visual identity, branding, digital experiences, and art direction.",
+      "Visual communication designer focused on branding, packaging, editorial design, illustration, and digital experiences.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -73,9 +73,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Ujjwal Tamrakar",
-    jobTitle: "Graphic Designer",
+    jobTitle: "Visual Communication Designer",
     description:
-      "Graphic designer focused on visual identity, branding, digital experiences, and art direction.",
+      "Visual communication designer focused on branding, packaging, editorial design, illustration, and digital experiences.",
     url: "https://ujjawaltamrakar.com",
     email: "mailto:hello@ujjawaltamrakar.com",
     address: {
@@ -83,13 +83,13 @@ export default function RootLayout({
       addressCountry: "IN",
     },
     knowsAbout: [
-      "Graphic Design",
-      "Visual Identity",
-      "Art Direction",
-      "Branding",
-      "Digital Design",
+      "Brand Identity",
+      "Packaging Design",
+      "Visual Communication",
+      "Editorial Design",
+      "Illustration",
       "Typography",
-      "Campaign Design",
+      "Art Direction",
     ],
     alumniOf: {
       "@type": "CollegeOrUniversity",
@@ -97,9 +97,8 @@ export default function RootLayout({
     },
     sameAs: [
       "https://www.instagram.com/ujjwal__tamrakar/",
-      "https://linkedin.com/in/ujjawaltamrakar",
-      "https://behance.net/ujjawaltamrakar",
-      "https://dribbble.com/ujjawaltamrakar",
+      "https://www.behance.net/ujjawaltamrakar",
+      "https://www.linkedin.com/in/ujjwal-tamrakar-158213250",
     ],
   };
 

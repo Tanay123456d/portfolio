@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Ujjwal Tamrakar — Graphic Designer",
+    name: "Ujjwal Tamrakar — Visual Communication Designer",
     short_name: "UJ",
     description:
-      "Graphic designer focused on visual identity, branding, digital experiences, and art direction.",
+      "Visual communication designer focused on branding, packaging, editorial design, illustration, and digital experiences.",
     start_url: "/",
     display: "standalone",
     background_color: "#F5F0EB",

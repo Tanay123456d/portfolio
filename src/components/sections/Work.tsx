@@ -27,7 +27,7 @@ export default function Work() {
             />
           </div>
           <p className="max-w-sm text-body-sm text-muted-foreground leading-relaxed md:text-right">
-            A selection of identity systems, campaigns, digital experiences, and visual experiments.
+            A selection of branding, packaging, editorial design, illustration, and digital experiences.
           </p>
         </div>
       </Reveal>

@@ -10,9 +10,10 @@ interface ProjectHeroProps {
   role: string;
   client: string;
   image: string;
+  behanceUrl?: string;
 }
 
-export default function ProjectHero({ title, category, year, role, client, image }: ProjectHeroProps) {
+export default function ProjectHero({ title, category, year, role, client, image, behanceUrl }: ProjectHeroProps) {
   return (
     <section className="section-padding pt-32 md:pt-44">
       <motion.div
@@ -48,6 +49,16 @@ export default function ProjectHero({ title, category, year, role, client, image
             <p className="text-meta text-foreground/40 mb-1 uppercase tracking-widest">Client</p>
             <p className="text-body-sm font-medium">{client}</p>
           </div>
+          {behanceUrl && (
+            <a
+              href={behanceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto inline-flex items-center gap-2 text-body-sm font-semibold text-accent hover:underline"
+            >
+              View on Behance <span aria-hidden>↗</span>
+            </a>
+          )}
         </div>
       </motion.div>
 

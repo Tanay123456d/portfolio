@@ -36,17 +36,16 @@ export default function About() {
 
           <Reveal delay={0.2}>
             <p className="text-body-lg text-muted-foreground leading-relaxed max-w-xl mb-8">
-              I&apos;m a graphic designer based in India, currently pursuing my B.Des in Graphic Design
-              at NIFT Bhopal. My practice sits at the intersection of brand identity, art direction,
-              and editorial design — where strategy meets craft.
+              I&apos;m a visual communication designer based in India, working across branding,
+              packaging, editorial design, illustration, and digital experiences — turning
+              brand ideas into systems people can recognize and feel.
             </p>
           </Reveal>
 
           <Reveal delay={0.3}>
             <p className="text-body-md text-muted-foreground leading-relaxed max-w-xl mb-12">
-              I believe good design doesn&apos;t just look good — it creates recognition. Whether it&apos;s a
-              complete identity system, a campaign, or an experimental poster series, I approach
-              every project with the same intention: clarity, character, and confidence.
+              Whether it&apos;s an identity system, a packaging range, or a digital case study, I
+              approach every project with the same intention: clarity, character, and confidence.
             </p>
           </Reveal>
 
@@ -92,7 +91,7 @@ export default function About() {
                   Ujjwal Tamrakar
                 </span>
                 <span className="text-meta text-background mix-blend-difference uppercase tracking-widest">
-                  NIFT Bhopal · 2026
+                  India
                 </span>
               </div>
             </motion.div>
